@@ -6,13 +6,14 @@ Alpine Linux 3.4 Docker image for Golang 1.6.2 Development. Image size about 365
 
 You can see in docker-compose.yml and example folder or
 
+Create docker-compose.yml
+
 ```docker-compose
 version: '2'
 
 services:
   app:
-    build:
-      context: ./
+    image: dogrocker/alpine-go-dev
     volumes:
       - "./src:/go/src"
 ```
@@ -29,7 +30,7 @@ or If you run Go web server
 $ docker-compose run --rm -p "8888:8080" app sh -l
 ```
 
-Then in docker container just run
+Then in docker container create .go file and run
 
 ```console
 $ go run example/main.go
